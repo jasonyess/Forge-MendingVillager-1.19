@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "mendingvillagermod:block/refined_bookshelf_block_end",
+    "side": "mendingvillagermod:block/refined_bookshelf_block_side"
+  }
+}
