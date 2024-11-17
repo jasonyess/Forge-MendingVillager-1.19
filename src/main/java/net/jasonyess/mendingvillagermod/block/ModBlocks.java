@@ -20,8 +20,8 @@ public class ModBlocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, MendingVillagerMod.MOD_ID);
 
     public static final RegistryObject<Block> REFINED_BOOKSHELF_BLOCK = registerBlock("refined_bookshelf_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.WOOD)
-                    .strength(25f).requiresCorrectToolForDrops()), CreativeModeTab.TAB_MISC);
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(2f).requiresCorrectToolForDrops()), CreativeModeTab.TAB_MISC);
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
