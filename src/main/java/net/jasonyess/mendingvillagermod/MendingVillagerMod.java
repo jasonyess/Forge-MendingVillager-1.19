@@ -3,6 +3,7 @@ package net.jasonyess.mendingvillagermod;
 import com.mojang.logging.LogUtils;
 import net.jasonyess.mendingvillagermod.block.ModBlocks;
 import net.jasonyess.mendingvillagermod.item.ModItems;
+import net.jasonyess.mendingvillagermod.villager.ModVillagers;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -27,6 +28,8 @@ public class MendingVillagerMod
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
 
+        ModVillagers.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -34,7 +37,9 @@ public class MendingVillagerMod
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
-
+        event.enqueueWork(() -> {
+            ModVillagers.registerPOIs();
+        });
     }
 
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
