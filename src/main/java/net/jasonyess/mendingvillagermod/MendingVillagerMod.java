@@ -1,6 +1,7 @@
 package net.jasonyess.mendingvillagermod;
 
 import com.mojang.logging.LogUtils;
+import net.jasonyess.mendingvillagermod.item.ModItems;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -21,6 +22,8 @@ public class MendingVillagerMod
     public MendingVillagerMod()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModItems.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
