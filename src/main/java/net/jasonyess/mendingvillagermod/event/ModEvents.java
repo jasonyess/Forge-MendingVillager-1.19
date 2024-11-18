@@ -25,7 +25,7 @@ public class ModEvents {
             mendingBook.enchant(Enchantments.MENDING, 1);
 
             trades.get(1).add((trader, rand) -> new MerchantOffer(
-                    new ItemStack(Items.EMERALD, 6),
+                    new ItemStack(Items.EMERALD, 32),
                     mendingBook, 1, 1, 0.01f));
         }
     }
