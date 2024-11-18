@@ -2,13 +2,10 @@ package net.jasonyess.mendingvillagermod.event;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.jasonyess.mendingvillagermod.MendingVillagerMod;
-import net.jasonyess.mendingvillagermod.item.ModItems;
 import net.jasonyess.mendingvillagermod.villager.ModVillagers;
 import net.minecraft.world.entity.npc.VillagerTrades;
-import net.minecraft.world.item.EnchantedBookItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.enchantment.EnchantmentInstance;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraftforge.event.village.VillagerTradesEvent;
@@ -28,7 +25,7 @@ public class ModEvents {
             mendingBook.enchant(Enchantments.MENDING, 1);
 
             trades.get(1).add((trader, rand) -> new MerchantOffer(
-                    new ItemStack(ModItems.EMERALD_SHARD.get(), 6),
+                    new ItemStack(Items.EMERALD, 6),
                     mendingBook, 1, 1, 0.01f));
         }
     }
